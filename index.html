@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Volunteer Training Hub</title>
+  <style>
+    :root {
+      --brand-blue: #1367c8;
+      --brand-blue-dark: #0d4f9d;
+      --brand-blue-light: #eaf3ff;
+      --text: #1f2a37;
+      --muted: #5b6675;
+      --border: #d8dee8;
+      --bg: #f3f6fa;
+      --card: #ffffff;
+      --success: #0f9d58;
+      --error: #d93025;
+      --shadow: 0 10px 28px rgba(18, 53, 91, 0.08);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+      background: linear-gradient(180deg, #eef3f9 0%, #f5f8fc 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+.brand-badge {
+  width: 43px;
+  height: 43px;
+  flex: 0 0 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.brand-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.brand-badge {
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.brand-badge::before,
+.brand-badge::after {
+  content: none !important;
+  display: none !important;
+}
+
+.brand-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.course-image {
+  height: 220px;
+  background: #eef2f5;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.course-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+.steps-wrap {
+  margin: 24px auto 14px;
+}
+    .site-shell {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+  .topbar {
+  background: #ffffff;
+  border-bottom: 1px solid #d9d9d9;
+  padding: 16px 32px;
+  position: relative;
+  z-index: 20;
+}
+
+.topbar-inner {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.brand-badge {
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.brand-badge::before,
+.brand-badge::after {
+  content: none !important;
+  display: none !important;
+}
+
+.brand-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.brand-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f5f4a;
+  letter-spacing: 0;
+    line-height: 1.1;
+}
+
+.brand-subtitle {
+  display: none;
+}
+
+.topbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.topbar-nav a {
+  text-decoration: none;
+  color: #1d1d1f;
+  font-size: 18px;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.topbar-nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: #2f5ea7;
+  border-radius: 999px;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1d1d1f;
+}
+
+.menu-icon {
+  width: 18px;
+  height: 14px;
+  position: relative;
+}
+
+.menu-icon span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #1d1d1f;
+  border-radius: 999px;
+}
+
+.menu-icon span:nth-child(1) { top: 0; }
+.menu-icon span:nth-child(2) { top: 6px; }
+.menu-icon span:nth-child(3) { top: 12px; }
+
+.content {
+  width: min(1280px, calc(100% - 40px));
+  margin: 0 auto 36px;
+  flex: 1;
+}
+    .page { display: none; }
+    .page.active { display: block; }
+
+.steps-wrap {
+  margin: 12px auto 8px;
+  background: #ffffff;
+  border: 1px solid #d8dde3;
+  border-radius: 22px;
+  padding: 14px 22px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  max-width: 1180px;
+}
+    .steps {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 0;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding-bottom: 2px;
+    }
+
+    .step-item {
+      position: relative;
+      min-width: 120px;
+      text-align: center;
+      color: #98a2b3;
+      font-weight: 700;
+      flex: 1;
+    }
+
+    .step-item:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 18px;
+      left: 58%;
+      width: 84%;
+      height: 5px;
+      background: #d7dce4;
+      border-radius: 999px;
+      z-index: 0;
+    }
+
+    .step-item.done:not(:last-child)::after,
+    .step-item.active:not(:last-child)::after {
+      background: #1ea94b;
+    }
+
+    .step-circle {
+      position: relative;
+      z-index: 1;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      margin: 0 auto 8px;
+      display: grid;
+      place-items: center;
+      background: #d7dce4;
+      color: white;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .step-item.active .step-circle,
+    .step-item.done .step-circle {
+      background: #1ea94b;
+    }
+
+    .step-label {
+      font-size: 0.98rem;
+      line-height: 1.25;
+      color: #1f2a37;
+    }
+
+.hero {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  background: #edf4ef;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 24px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.18);
+}
+
+.hero::before {
+  left: -120px;
+  top: -10px;
+}
+
+.hero::after {
+  right: -120px;
+  top: -10px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(30px, 3.1vw, 42px);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #234c3b;
+  position: relative;
+  z-index: 1;
+}
+
+.hero p {
+  display: none;
+}
+
+    .feedback {
+      display: none;
+      margin: 0 0 18px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      line-height: 1.55;
+      font-weight: 700;
+    }
+
+    .feedback.error {
+      display: block;
+      background: #fff4f3;
+      border: 1px solid #f3c1bc;
+      color: var(--error);
+    }
+
+    .feedback.success {
+      display: block;
+      background: #eefaf3;
+      border: 1px solid #bfe7cd;
+      color: #18794e;
+    }
+    
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 26px;
+}
+
+.course-card {
+  background: #ffffff;
+  border: 1px solid #d6d6d6;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+
+.course-image {
+  height: 220px;
+  background: #eef2f5;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.course-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+ 
+
+.course-body {
+  padding: 16px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.course-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #193a70;
+  margin-bottom: 2px;
+}
+.course-location {
+  color: #7a7a7a;
+  font-size: 18px;
+  font-weight: 400;
+}
+.detail-row {
+  display: block;
+  color: #1f2a37;
+  line-height: 1.6;
+  font-size: 16px;
+}
+.detail-icon {
+  display: none;
+}
+
+.course-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1d2f4d;
+}
+.button-row {
+  margin-top: 10px;
+  padding-top: 0;
+}
+    button,
+    .button-link {
+      border: 0;
+      border-radius: 999px;
+      padding: 13px 24px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+    }
+
+    button:hover,
+    .button-link:hover { transform: translateY(-1px); }
+
+.btn-primary,
+.continue-paypal-btn,
+.download-receipt-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 260px;
+  max-width: 100%;
+  min-height: 46px;
+  padding: 0 22px;
+  margin: 24px auto 0;
+  border: 0;
+  border-radius: 8px;
+  background: #2fa052;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #27864a;
+}
+
+    .btn-secondary {
+      background: #eef4fb;
+      color: var(--brand-blue-dark);
+      border: 1px solid #d7e6fa;
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .panel-header {
+      background: linear-gradient(135deg, #fafdff, #eef5ff);
+      padding: 24px 26px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .panel-header h2 {
+      margin: 0 0 8px;
+      font-size: clamp(1.5rem, 3vw, 1.9rem);
+    }
+
+    .panel-header p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 1rem;
+    }
+
+    .panel-body {
+      padding: 26px;
+    }
+
+  
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px 16px;
+    }
+
+    .field.full { grid-column: 1 / -1; }
+
+    .field label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    input,
+    select {
+      width: 100%;
+      min-height: 52px;
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 12px 14px;
+      font-family: inherit;
+      font-size: 1rem;
+      color: var(--text);
+      background: #fff;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #7db3ef;
+      box-shadow: 0 0 0 4px rgba(19, 103, 200, 0.1);
+    }
+
+    .error-input {
+      border-color: #f1a29b !important;
+      background: #fff9f8;
+      box-shadow: 0 0 0 4px rgba(217, 48, 37, 0.08);
+    }
+
+    .dob-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .info-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 8px;
+      padding: 9px 12px;
+      background: var(--brand-blue-light);
+      color: var(--brand-blue-dark);
+      border-radius: 12px;
+      font-size: 0.93rem;
+      line-height: 1.45;
+      cursor: pointer;
+      border: 1px solid #d6e6fc;
+      width: fit-content;
+    }
+
+.info-box {
+  display: none;
+  margin-top: 10px;
+  margin-bottom: 0;
+  background: #edf6ff;
+  border: 1px solid #d0e5fb;
+  color: var(--text);
+  border-radius: 16px;
+  padding: 13px 15px;
+  line-height: 1.55;
+  font-size: 0.97rem;
+}
+.email-toast {
+  position: fixed;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(520px, calc(100% - 32px));
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.email-toast-inner {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #d7dbe2;
+  border-radius: 18px;
+  padding: 14px 18px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  pointer-events: auto;
+}
+.email-toast-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid #d7dbe2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #4a5565;
+  background: #fafafa;
+  flex: 0 0 40px;
+}
+
+.email-toast-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.email-toast-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+.email-toast-message {
+  font-size: 0.98rem;
+  line-height: 1.35;
+  color: #222;
+}
+
+.email-toast-time {
+  font-size: 0.95rem;
+  color: #777;
+  white-space: nowrap;
+}
+.password-wrap {
+  position: relative;
+}
+
+.password-wrap input {
+  padding-right: 90px;
+}
+
+.show-password-btn {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #1367c8;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  min-height: auto;
+  border-radius: 0;
+  display: block;
+  z-index: 2;
+}
+.resend-link {
+  margin-top: 14px;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: #1367c8;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.resend-link:hover {
+  text-decoration: underline;
+}
+
+.resend-link[disabled] {
+  color: #9aa4b2;
+  cursor: default;
+  text-decoration: none;
+}
+
+    .checkboxes {
+      display: grid;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 13px 14px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fbfdff;
+    }
+
+    .checkbox-item input {
+      width: 20px;
+      min-height: 20px;
+      margin-top: 2px;
+      accent-color: var(--brand-blue);
+    }
+
+    .paypal-card {
+      width: min(680px, 100%);
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .paypal-head {
+      padding: 26px 30px;
+      background: linear-gradient(135deg, #0e63be, #003087);
+      color: white;
+    }
+
+    .paypal-logo {
+      font-size: 2.1rem;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+    }
+
+    .paypal-sub {
+      margin-top: 8px;
+      opacity: 0.95;
+      font-size: 1.05rem;
+    }
+
+    .paypal-body {
+      padding: 30px;
+      background: #f9fbff;
+    }
+
+    .email-code-box {
+      width: min(460px, 100%);
+      margin: 0 auto;
+      text-align: center;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .email-code-box h3 {
+      margin: 0 0 8px;
+      font-size: 1.55rem;
+    }
+
+    .email-code-box p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .loading-page {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 360px;
+    }
+
+    .loading-card {
+      width: min(460px, 100%);
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 34px 28px;
+      text-align: center;
+    }
+
+    .spinner {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      border: 6px solid #dbe9fb;
+      border-top-color: var(--brand-blue);
+      animation: spin 0.9s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .loading-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.55rem;
+    }
+
+    .loading-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .payment-review {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 8px;
+    }
+
+    .payment-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 12px 0;
+      border-bottom: 1px solid #ecf1f7;
+      font-size: 1rem;
+    }
+ .payment-review {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 8px;
+    }
+
+    .payment-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 12px 0;
+      border-bottom: 1px solid #ecf1f7;
+      font-size: 1rem;
+    }
+.payment-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid #a9a9a9;
+  border-radius: 10px;
+  padding: 12px 16px;
+  background: #fff;
+  cursor: pointer;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto 12px;
+  box-sizing: border-box;
+}
+.payment-option-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+.payment-option input {
+  position: absolute;
+  opacity: 0;
+}
+
+.radio-circle {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border: 2px solid #6f6f6f;
+  border-radius: 50%;
+  position: relative;
+}
+
+
+.payment-option input:checked + .radio-circle {
+  border-color: #2fa052;
+}
+
+.payment-option input:checked + .radio-circle::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #2fa052;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.payment-name {
+  flex: 1;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+}
+
+.payment-icon {
+  width: 78px;
+  height: 46px;
+  object-fit: contain;
+  margin-left: auto;
+  display: block;
+  flex-shrink: 0;
+}
+    .payment-row:last-child { border-bottom: 0; }
+
+    .payment-row span:first-child { color: var(--muted); }
+    .payment-row strong { text-align: right; }
+    .payment-row:last-child { border-bottom: 0; }
+
+    .payment-row span:first-child { color: var(--muted); }
+    .payment-row strong { text-align: right; }
+
+    .success-wrap {
+      text-align: center;
+      padding: 18px 0 4px;
+    }
+
+    .success-icon {
+      width: 92px;
+      height: 92px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 2.2rem;
+      color: white;
+      background: linear-gradient(135deg, #2ca26b, #0f9d58);
+      box-shadow: 0 10px 24px rgba(15, 157, 88, 0.22);
+    }
+
+    .success-wrap h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.7rem, 3.4vw, 2.05rem);
+    }
+
+    .success-wrap p {
+      margin: 0 auto 22px;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 620px;
+      font-size: 1.02rem;
+    }
+
+    .receipt-note {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .site-footer {
+      text-align: center;
+      padding: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 980px) {
+      .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 860px) {
+      .summary-grid,
+      .form-grid,
+      .tiles {
+        grid-template-columns: 1fr;
+      }
+
+      .dob-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .step-item {
+        min-width: 96px;
+      }
+
+      .step-item:not(:last-child)::after {
+        width: 70%;
+        left: 64%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+  <div class="topbar-inner">
+  <div class="brand-wrap">
+  <div class="brand-badge">
+    <img src="volunteer hub.png" alt="Volunteer Training Hub logo">
+  </div>
+  <div>
+    <div class="brand-title">Volunteer Training Hub</div>
+  </div>
+</div>
+  </div>
+</header>
+    <main class="content">
+     <div class="steps-wrap">
+  <div class="steps" id="stepsBar">
+    <div class="step-item active" data-step="1">
+      <div class="step-circle">1</div>
+      <div class="step-label">Choose course</div>
+    </div>
+
+    <div class="step-item" data-step="2">
+      <div class="step-circle">2</div>
+      <div class="step-label">Enrol form</div>
+    </div>
+
+    <div class="step-item" data-step="3">
+      <div class="step-circle">3</div>
+      <div class="step-label">Payment</div>
+    </div>
+
+    <div class="step-item" data-step="4">
+      <div class="step-circle">4</div>
+      <div class="step-label">Done</div>
+    </div>
+  </div>
+</div>
+
+      <section class="page active" id="homePage">
+        <div class="hero">
+          <h1>Popular Volunteer Training Courses</h1>
+          <p>
+            Read the course information carefully and choose the correct training.
+            Shani needs to enrol in the <strong>First Aid Training</strong> course.
+          </p>
+        </div>
+
+        <div class="feedback" id="courseFeedback"></div>
+
+        <div class="tiles">
+          <article class="course-card">
+<div class="course-image">
+  <img src="whs.png" alt="whs image">
+</div>
+            <div class="course-body">
+<div class="course-title">Workplace Safety</div>
+<div class="course-location">Bankstown, NSW</div>
+<div class="detail-row">Thursday, 9 April 2026</div>
+<div class="detail-row">1:00 pm - 4:00 pm</div>
+<div class="detail-row"><div class="course-price">$45</div></div>
+              <div class="button-row">
+                <button class="btn-primary" type="button" onclick="wrongCourse()">Enrol now</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card">
+            <div class="course-image">
+  <img src="first aid.png" alt="First Aid Training course image">
+</div>
+            <div class="course-body">
+            <div class="course-title">First Aid Training</div>
+<div class="course-location">Cabramatta, NSW</div>
+<div class="detail-row">Friday, 10 April 2026</div>
+<div class="detail-row">9:00 am - 12:00 pm</div>
+<div class="detail-row"><div class="course-price">$75</div></div>
+              <div class="button-row">
+                <button class="btn-primary" type="button" onclick="goToPage('enrolPage')">Enrol now</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card">
+           <div class="course-image">
+  <img src="food safety.png" alt="Food Safety for Volunteers course image">
+</div>
+            <div class="course-body">
+             <div class="course-title">Food Safety for Volunteers</div>
+<div class="course-location">Fairfield, NSW</div>
+<div class="detail-row">Saturday, 11 April 2026</div>
+<div class="detail-row">9:00 am - 12:00 pm</div>
+<div class="detail-row"><div class="course-price">$65</div></div>
+              <div class="button-row">
+                <button class="btn-primary" type="button" onclick="wrongCourse()">Enrol now</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card">
+<div class="course-image">
+  <img src="communication.png" alt="Communication Skills for Volunteers course image">
+</div>
+            <div class="course-body">
+              <div class="course-title">Communication Skills</div>
+<div class="course-location">Liverpool, NSW</div>
+<div class="detail-row">Tuesday, 14 April 2026</div>
+<div class="detail-row">1:00 pm - 4:00 pm</div>
+<div class="detail-row"><div class="course-price">Free</div></div>
+              <div class="button-row">
+                <button class="btn-primary" type="button" onclick="wrongCourse()">Enrol now</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="page" id="enrolPage">
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Training enrolment form</h2>
+            <p>Please enter your details.</p>
+          </div>
+          <div class="panel-body">
+            
+
+            <div class="feedback" id="formFeedback"></div>
+
+            <form id="enrolForm" novalidate>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="firstName">First name</label>
+                  <input id="firstName" type="text" autocomplete="off" />
+                </div>
+
+                <div class="field">
+                  <label for="lastName">Last name</label>
+                  <input id="lastName" type="text" autocomplete="off" />
+                </div>
+
+                <div class="field full">
+                  <label>Date of birth</label>
+                  <div class="dob-grid">
+                    <select id="dobDay"><option value="">Day</option></select>
+                    <select id="dobMonth"><option value="">Month</option></select>
+                    <select id="dobYear"><option value="">Year</option></select>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="email1">Email address</label>
+                  <input id="email1" type="email" autocomplete="off" />
+                </div>
+
+                <div class="field">
+                  <label for="email2">Enter email address again</label>
+                  <input id="email2" type="email" autocomplete="off" />
+                </div>
+
+                <div class="field">
+                  <label for="phone">Mobile phone number</label>
+                  <input id="phone" type="text" autocomplete="off" />
+                </div>
+
+                <div class="field">
+                  <label for="usi">USI number</label>
+                  <input id="usi" type="text" autocomplete="off" />
+                  <button class="info-pill" type="button" onclick="toggleUSIInfo()">ℹ️ What is a USI?</button>
+                  <div class="info-box" id="usiInfo">USI = Unique Student Identifier. You need a USI to get your certificate.</div>
+                </div>
+
+               <div class="field-group">
+  <label class="field-label" style="display:block; max-width:520px; margin:0 auto 10px; font-weight:700; font-size:18px;">
+  Payment method
+</label>
+
+  <div class="payment-options">
+
+ <label class="payment-option">
+  <div class="payment-option-left">
+    <input type="radio" name="paymentMethod" value="card">
+    <span class="radio-circle"></span>
+    <span class="payment-name">Card</span>
+  </div>
+  <img src="credit-card (1).png" alt="Card" class="payment-icon">
+</label>
+
+<label class="payment-option">
+  <div class="payment-option-left">
+    <input type="radio" name="paymentMethod" value="applepay">
+    <span class="radio-circle"></span>
+    <span class="payment-name">Apple Pay</span>
+  </div>
+  <img src="apple-pay (1).png" alt="Apple Pay" class="payment-icon">
+</label>
+
+<label class="payment-option">
+  <div class="payment-option-left">
+    <input type="radio" name="paymentMethod" value="googlepay">
+    <span class="radio-circle"></span>
+    <span class="payment-name">Google Pay</span>
+  </div>
+  <img src="google-pay (1).png" alt="Google Pay" class="payment-icon">
+</label>
+
+<label class="payment-option">
+  <div class="payment-option-left">
+    <input type="radio" name="paymentMethod" value="paypal">
+    <span class="radio-circle"></span>
+    <span class="payment-name">PayPal</span>
+  </div>
+  <img src="paypal.png" alt="PayPal" class="payment-icon">
+</label>
+  </div>
+</div>
+
+                <div class="field full">
+                  <label>Course agreement</label>
+                  <div class="checkboxes">
+                    <label class="checkbox-item">
+                      <input type="checkbox" id="checkEmail" />
+                      <span>I understand I will get course information by email.</span>
+                    </label>
+                    <label class="checkbox-item">
+                      <input type="checkbox" id="checkRules" />
+                      <span>I agree to the course rules and privacy policy.</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="centered-actions">
+                <button class="btn-primary" type="button" onclick="validateEnrolment()">Continue to Pay</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="page" id="loadingToLoginPage">
+        <div class="loading-page">
+          <div class="loading-card">
+            <div class="spinner"></div>
+            <h3>Loading PayPal</h3>
+            <p>Please wait a moment...</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="page" id="paypalLoginPage">
+        <div class="paypal-card">
+          <div class="paypal-head">
+            <div class="paypal-logo">PayPal</div>
+            <div class="paypal-sub">Log in to continue your payment</div>
+          </div>
+          <div class="paypal-body">
+            <div class="feedback" id="paypalLoginFeedback"></div>
+            <div class="form-grid">
+              <div class="field full">
+                <label for="paypalEmail">Email</label>
+                <input id="paypalEmail" type="email" autocomplete="off" />
+              </div>
+              <div class="field full">
+  <label for="paypalPassword">Password</label>
+  <div class="password-wrap">
+    <input id="paypalPassword" type="password">
+    <button type="button" class="show-password-btn" onclick="togglePaypalPassword()">
+      Show
+    </button>
+  </div>
+</div>
+            </div>
+            <div class="centered-actions">
+              <button class="btn-primary" type="button" onclick="validatePaypalLogin()">Log In</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page" id="paypalCodePage">
+        <div class="paypal-card">
+          <div class="paypal-head">
+            <div class="paypal-logo">PayPal</div>
+            <div class="paypal-sub">Check your email to continue</div>
+          </div>
+          <div class="paypal-body">
+           <div class="email-toast" id="codeToast">
+  <div class="email-toast-inner">
+    <div class="email-toast-icon">VH</div>
+    <div class="email-toast-text">
+      <div class="email-toast-title">Volunteer Training Hub</div>
+      <div class="email-toast-message">
+        The code to verify your email is <strong id="liveCodeText"></strong>.
+      </div>
+    </div>
+    <div class="email-toast-time">now</div>
+  </div>
+</div>
+            <div class="email-code-box">
+              <h3>Email verification</h3>
+              <p>Enter the 6-digit code sent to your email.</p>
+              <div class="feedback" id="codeFeedback"></div>
+              <div class="field full">
+                <label for="emailCode">6-digit code</label>
+                <input id="emailCode" type="text" maxlength="6" autocomplete="off" />
+              </div>
+              <div class="centered-actions">
+                <button class="btn-primary" type="button" onclick="validateEmailCode()">Verify code</button>
+                <button class="resend-link" type="button" onclick="resendEmailCode()">Resend code</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page" id="loadingToPaymentPage">
+        <div class="loading-page">
+          <div class="loading-card">
+            <div class="spinner"></div>
+            <h3>Loading payment</h3>
+            <p>Please wait a moment...</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="page" id="paypalPaymentPage">
+        <div class="paypal-card">
+          <div class="paypal-head">
+            <div class="paypal-logo">PayPal</div>
+            <div class="paypal-sub">Review your payment before you continue</div>
+          </div>
+          <div class="paypal-body">
+            <div class="payment-review">
+              <div class="payment-row"><span>Course</span><strong>First Aid Training</strong></div>
+              <div class="payment-row"><span>Organisation</span><strong>Volunteer Training Hub</strong></div>
+              <div class="payment-row"><span>Date &amp; Time</span><strong>Fri, 10 Apr 2026<br>9:00 am – 12:00 pm</strong></div>
+              <div class="payment-row"><span>Pay with</span><strong>Visa ending in 2456</strong></div>
+              <div class="payment-row"><span>Total</span><strong>$75.00</strong></div>
+            </div>
+            <div class="centered-actions">
+              <button class="btn-primary" type="button" onclick="completePayment()">Complete Payment</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page" id="successPage">
+        <div class="panel">
+          <div class="panel-body">
+            <div class="success-wrap">
+              <div class="success-icon">✓</div>
+              <h2>Payment successful</h2>
+              <p>
+                Thank you for your payment. 
+              </p>
+            </div>
+            <div class="centered-actions">
+            <a class="btn-primary" href="Volunteer_Training_Hub_Receipt.pdf" download>Download Receipt</a>
+            </div>
+           
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">Mock website for classroom use. Not a real business.</footer>
+  </div>
+
+  <script>
+const stageMap = {
+  homePage: 1,
+  enrolPage: 2,
+  loadingToLoginPage: 3,
+  paypalLoginPage: 3,
+  paypalCodePage: 3,
+  loadingToPaymentPage: 3,
+  paypalPaymentPage: 3,
+  successPage: 4
+};
+
+    const pageOrder = ['homePage', 'enrolPage', 'loadingToLoginPage', 'paypalLoginPage', 'paypalCodePage', 'loadingToPaymentPage', 'paypalPaymentPage', 'successPage'];
+    let loadingTimer = null;
+
+    function populateDOB() {
+      const day = document.getElementById('dobDay');
+      const month = document.getElementById('dobMonth');
+      const year = document.getElementById('dobYear');
+
+      for (let i = 1; i <= 31; i++) {
+        const value = String(i).padStart(2, '0');
+        day.innerHTML += `<option value="${value}">${value}</option>`;
+      }
+      for (let i = 1; i <= 12; i++) {
+        const value = String(i).padStart(2, '0');
+        month.innerHTML += `<option value="${value}">${value}</option>`;
+      }
+      for (let i = 2026; i >= 1950; i--) {
+        year.innerHTML += `<option value="${i}">${i}</option>`;
+      }
+    }
+
+    function updateSteps(pageId) {
+      const currentStage = stageMap[pageId] || 1;
+      document.querySelectorAll('.step-item').forEach(item => {
+        const step = Number(item.dataset.step);
+        item.classList.remove('done', 'active');
+        if (step < currentStage) item.classList.add('done');
+        if (step === currentStage) item.classList.add('active');
+      });
+    }
+
+    function clearPendingTimer() {
+      if (loadingTimer) {
+        clearTimeout(loadingTimer);
+        loadingTimer = null;
+      }
+    }
+
+    function showPage(pageId, pushToHistory = true) {
+  clearPendingTimer();
+  document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+  const target = document.getElementById(pageId);
+  if (!target) return;
+  target.classList.add('active');
+
+  if (pageId === 'paypalCodePage') {
+    generateEmailCode();
+  }
+
+  updateSteps(pageId);
+
+      if (pushToHistory) {
+        history.pushState({ page: pageId }, '', '#' + pageId);
+      }
+
+      if (pageId === 'loadingToLoginPage') {
+        loadingTimer = setTimeout(() => {
+          showPage('paypalLoginPage', true);
+        }, 2000);
+      }
+
+      if (pageId === 'loadingToPaymentPage') {
+        loadingTimer = setTimeout(() => {
+          showPage('paypalPaymentPage', true);
+        }, 2000);
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function goToPage(pageId) {
+      clearFeedback('courseFeedback');
+      clearFeedback('formFeedback');
+      clearFeedback('paypalLoginFeedback');
+      clearFeedback('codeFeedback');
+      showPage(pageId, true);
+    }
+
+    function wrongCourse() {
+      showFeedback('courseFeedback', 'This is not the course Shani needs. Please choose another course.', 'error');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+   function showFeedback(id, message, type) {
+  const box = document.getElementById(id);
+  box.innerHTML = message;
+  box.className = `feedback ${type}`;
+}
+    function clearFeedback(id) {
+      const box = document.getElementById(id);
+      if (!box) return;
+      box.textContent = '';
+      box.className = 'feedback';
+    }
+
+    function toggleUSIInfo() {
+      const info = document.getElementById('usiInfo');
+      info.style.display = info.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function clearFieldErrors() {
+      document.querySelectorAll('input, select').forEach(el => el.classList.remove('error-input'));
+    }
+
+    function markError(id) {
+      const element = document.getElementById(id);
+      if (element) element.classList.add('error-input');
+    }
+
+    function emailFirstLetterFlexibleMatch(input, expected) {
+      if (!input) return false;
+      if (input === expected) return true;
+      const chars = expected.split('');
+      chars[0] = chars[0].toUpperCase();
+      return input === chars.join('');
+    }
+
+  function validateEnrolment() {
+  clearFieldErrors();
+  clearFeedback('formFeedback');
+
+  const firstName = document.getElementById('firstName').value.trim();
+  const lastName = document.getElementById('lastName').value.trim();
+  const dobDay = document.getElementById('dobDay').value;
+  const dobMonth = document.getElementById('dobMonth').value;
+  const dobYear = document.getElementById('dobYear').value;
+  const email1 = document.getElementById('email1').value.trim();
+  const email2 = document.getElementById('email2').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const usi = document.getElementById('usi').value.trim();
+  const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked')?.value;
+  const checkEmail = document.getElementById('checkEmail').checked;
+  const checkRules = document.getElementById('checkRules').checked;
+
+  let errors = [];
+  let nameCapitalError = false;
+
+  if (firstName.toLowerCase() !== 'shani') {
+    markError('firstName');
+    errors.push('First name is not correct. Please try again.');
+  } else if (firstName !== 'Shani') {
+    markError('firstName');
+    nameCapitalError = true;
+  }
+
+  if (lastName.toLowerCase() !== 'igwe') {
+    markError('lastName');
+    errors.push('Last name is not correct. Please try again.');
+  } else if (lastName !== 'Igwe') {
+    markError('lastName');
+    nameCapitalError = true;
+  }
+
+  if (dobDay !== '04' || dobMonth !== '05' || dobYear !== '1998') {
+    markError('dobDay');
+    markError('dobMonth');
+    markError('dobYear');
+    errors.push('Date of birth is not correct. Please try again.');
+  }
+
+  if (!emailFirstLetterFlexibleMatch(email1, 'shani.nk98@gmail.com')) {
+    markError('email1');
+    errors.push('Email address is not correct. Please try again.');
+  }
+
+  if (!emailFirstLetterFlexibleMatch(email2, 'shani.nk98@gmail.com')) {
+    markError('email2');
+    errors.push('Please enter the same email address again.');
+  }
+
+  if (
+    emailFirstLetterFlexibleMatch(email1, 'shani.nk98@gmail.com') &&
+    emailFirstLetterFlexibleMatch(email2, 'shani.nk98@gmail.com') &&
+    email1.toLowerCase() !== email2.toLowerCase()
+  ) {
+    markError('email1');
+    markError('email2');
+    errors.push('Email addresses do not match. Please try again.');
+  }
+
+  if (phone !== '0456 559 469') {
+    markError('phone');
+    errors.push('Mobile phone number is not correct. Please try again.');
+  }
+
+  if (usi.toUpperCase() !== '4K8M7T2R9P') {
+    markError('usi');
+    errors.push('USI number is not correct. Please try again.');
+  }
+
+  if (paymentMethod !== 'paypal') {
+    errors.push('Shani does not want to use this payment method. Please choose another method.');
+  }
+
+  if (!checkEmail || !checkRules) {
+    errors.push('Please tick all boxes.');
+  }
+
+  if (nameCapitalError) {
+    errors.push('First letter of names must be capital.');
+  }
+
+  if (errors.length > 0) {
+    showFeedback('formFeedback', errors.join('<br>'), 'error');
+    return;
+  }
+
+  showPage('loadingToLoginPage', true);
+}
+
+ function validatePaypalLogin() {
+  clearFieldErrors();
+  clearFeedback('paypalLoginFeedback');
+
+  const email = document.getElementById('paypalEmail').value.trim();
+  const password = document.getElementById('paypalPassword').value.trim();
+
+  let errors = [];
+
+  if (!emailFirstLetterFlexibleMatch(email, 'shani.nk98@gmail.com')) {
+    markError('paypalEmail');
+    errors.push('Email is not correct. Please try again.');
+  }
+
+ if (password !== 'SunnyDay$123') {
+  markError('paypalPassword');
+  errors.push('Password is not correct. Please try again.');
+}
+
+  if (errors.length > 0) {
+    showFeedback('paypalLoginFeedback', errors.join('<br>'), 'error');
+    return;
+  }
+
+  showPage('paypalCodePage', true);
+}
+let currentEmailCode = "";
+let resendSeconds = 0;
+let resendInterval = null;
+    
+function togglePaypalPassword() {
+  const input = document.getElementById('paypalPassword');
+  const button = document.querySelector('.show-password-btn');
+
+  if (input.type === 'password') {
+    input.type = 'text';
+    button.textContent = 'Hide';
+  } else {
+    input.type = 'password';
+    button.textContent = 'Show';
+  }
+}
+function generateEmailCode() {
+  currentEmailCode = String(Math.floor(100000 + Math.random() * 900000));
+
+  const codeText = document.getElementById('liveCodeText');
+  if (codeText) {
+    codeText.textContent = currentEmailCode;
+  }
+
+  startResendTimer();
+}
+
+function startResendTimer() {
+  const resendBtn = document.querySelector('#paypalCodePage .resend-link');
+
+  resendSeconds = 20;
+
+  if (resendInterval) clearInterval(resendInterval);
+
+  resendBtn.disabled = true;
+  resendBtn.textContent = `Resend code (${resendSeconds}s)`;
+
+  resendInterval = setInterval(() => {
+    resendSeconds--;
+
+    if (resendSeconds > 0) {
+      resendBtn.textContent = `Resend code (${resendSeconds}s)`;
+    } else {
+      clearInterval(resendInterval);
+      resendInterval = null;
+      resendBtn.disabled = false;
+      resendBtn.textContent = 'Resend code';
+    }
+  }, 1000);
+}
+
+function validateEmailCode() {
+  clearFieldErrors();
+  clearFeedback('codeFeedback');
+
+  const code = document.getElementById('emailCode').value.trim();
+
+  if (code !== currentEmailCode) {
+    markError('emailCode');
+    showFeedback('codeFeedback', 'The code is not correct. Please try again.', 'error');
+    return;
+  }
+
+  showPage('loadingToPaymentPage', true);
+}
+
+function resendEmailCode() {
+  if (resendSeconds > 0) return;
+
+  generateEmailCode();
+  document.getElementById('emailCode').value = '';
+  showFeedback('codeFeedback', 'A new code has been sent.', 'success');
+}
+    function completePayment() {
+      showPage('successPage', true);
+    }
+
+    function downloadReceipt() {
+      const html = `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Receipt Placeholder</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 40px; color: #222; }
+    .box { max-width: 700px; margin: 0 auto; border: 1px solid #ccc; padding: 28px; border-radius: 10px; }
+    h1 { margin-top: 0; }
+    .row { margin: 12px 0; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Volunteer Training Hub</h1>
+    <p><strong>Receipt Placeholder PDF</strong></p>
+    <div class="row">Student name: Shani Igwe</div>
+    <div class="row">Course: First Aid Training</div>
+    <div class="row">Date: Fri, 10 Apr 2026</div>
+    <div class="row">Time: 9:00 am – 12:00 pm</div>
+    <div class="row">Amount paid: $87.00</div>
+    <div class="row">Payment method: PayPal</div>
+    <div class="row">Receipt number: VTH-482761</div>
+  </div>
+</body>
+</html>`;
+      const blob = new Blob([html], { type: 'application/pdf' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'Volunteer_Training_Hub_Receipt.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    }
+
+
+  function initialisePage() {
+  populateDOB();
+
+  const currentHash = window.location.hash.replace('#', '');
+  const startPage = pageOrder.includes(currentHash) ? currentHash : 'homePage';
+
+  const pageHistoryMap = {
+    homePage: ['homePage'],
+    enrolPage: ['homePage', 'enrolPage'],
+    paypalLoginPage: ['homePage', 'enrolPage', 'paypalLoginPage'],
+    paypalCodePage: ['homePage', 'enrolPage', 'paypalLoginPage', 'paypalCodePage'],
+    paypalPaymentPage: ['homePage', 'enrolPage', 'paypalLoginPage', 'paypalCodePage', 'paypalPaymentPage'],
+    successPage: ['homePage', 'enrolPage', 'paypalLoginPage', 'paypalCodePage', 'paypalPaymentPage', 'successPage']
+  };
+
+  const historyPages = pageHistoryMap[startPage] || ['homePage'];
+
+  history.replaceState({ page: historyPages[0] }, '', '#' + historyPages[0]);
+
+  for (let i = 1; i < historyPages.length; i++) {
+    history.pushState({ page: historyPages[i] }, '', '#' + historyPages[i]);
+  }
+
+  showPage(startPage, false);
+}
+
+window.addEventListener('popstate', function () {
+  const page = window.location.hash.replace('#', '') || 'homePage';
+  showPage(page, false);
+});
+
+initialisePage();
+    
+  </script>
+</body>
+</html>
