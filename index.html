@@ -1561,7 +1561,9 @@ const stageMap = {
     errors.push('Email addresses do not match. Please try again.');
   }
 
-  if (phone !== '0456 559 469') {
+const cleanedPhone = phone.replace(/\s+/g, '');
+
+if (cleanedPhone !== '0456559469') {
     markError('phone');
     errors.push('Mobile phone number is not correct. Please try again.');
   }
